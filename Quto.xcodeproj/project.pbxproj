@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A2991E8721E2187E00D84FA1 /* QutoView.h in Headers */ = {isa = PBXBuildFile; fileRef = A2991E8621E2187E00D84FA1 /* QutoView.h */; };
-		A2991E8921E2187E00D84FA1 /* QutoView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2991E8821E2187E00D84FA1 /* QutoView.m */; };
+		A24796B121E2301A00AF5C5C /* NSTextField+Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24796B021E2301A00AF5C5C /* NSTextField+Label.swift */; };
+		A27C71DF21E21EEF005C9B89 /* QutoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27C71DE21E21EEF005C9B89 /* QutoView.swift */; };
+		A27C71E121E2231A005C9B89 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27C71E021E2231A005C9B89 /* Quote.swift */; };
+		A27C71E321E223BB005C9B89 /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = A27C71E221E223BA005C9B89 /* quotes.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A24796B021E2301A00AF5C5C /* NSTextField+Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextField+Label.swift"; sourceTree = "<group>"; };
+		A27C71DE21E21EEF005C9B89 /* QutoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QutoView.swift; sourceTree = "<group>"; };
+		A27C71E021E2231A005C9B89 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		A27C71E221E223BA005C9B89 /* quotes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quotes.json; sourceTree = "<group>"; };
 		A2991E8321E2187E00D84FA1 /* Quto.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Quto.saver; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2991E8621E2187E00D84FA1 /* QutoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QutoView.h; sourceTree = "<group>"; };
-		A2991E8821E2187E00D84FA1 /* QutoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QutoView.m; sourceTree = "<group>"; };
 		A2991E8A21E2187E00D84FA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -29,6 +33,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A24796B221E2A84700AF5C5C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A27C71DE21E21EEF005C9B89 /* QutoView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A24796B321E2A85400AF5C5C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A27C71E021E2231A005C9B89 /* Quote.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A24796B421E2A85D00AF5C5C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A24796B021E2301A00AF5C5C /* NSTextField+Label.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A24796B521E2A86800AF5C5C /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				A27C71E221E223BA005C9B89 /* quotes.json */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
 		A2991E7921E2187E00D84FA1 = {
 			isa = PBXGroup;
 			children = (
@@ -48,9 +84,11 @@
 		A2991E8521E2187E00D84FA1 /* Quto */ = {
 			isa = PBXGroup;
 			children = (
-				A2991E8621E2187E00D84FA1 /* QutoView.h */,
-				A2991E8821E2187E00D84FA1 /* QutoView.m */,
 				A2991E8A21E2187E00D84FA1 /* Info.plist */,
+				A24796B221E2A84700AF5C5C /* View */,
+				A24796B321E2A85400AF5C5C /* Model */,
+				A24796B421E2A85D00AF5C5C /* Extensions */,
+				A24796B521E2A86800AF5C5C /* Files */,
 			);
 			path = Quto;
 			sourceTree = "<group>";
@@ -62,7 +100,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2991E8721E2187E00D84FA1 /* QutoView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +135,7 @@
 				TargetAttributes = {
 					A2991E8221E2187E00D84FA1 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -123,6 +161,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A27C71E321E223BB005C9B89 /* quotes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,7 +172,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2991E8921E2187E00D84FA1 /* QutoView.m in Sources */,
+				A27C71E121E2231A005C9B89 /* Quote.swift in Sources */,
+				A24796B121E2301A00AF5C5C /* NSTextField+Label.swift in Sources */,
+				A27C71DF21E21EEF005C9B89 /* QutoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,13 +295,23 @@
 		A2991E8E21E2187E00D84FA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 36C5PY3HAP;
 				INFOPLIST_FILE = Quto/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.meseery.Quto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Debug;
@@ -268,13 +319,22 @@
 		A2991E8F21E2187E00D84FA1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 36C5PY3HAP;
 				INFOPLIST_FILE = Quto/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.meseery.Quto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 4.2;
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Release;
