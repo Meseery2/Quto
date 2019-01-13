@@ -11,87 +11,84 @@ import ScreenSaver
 
 class QutoView: ScreenSaverView {
     private var quoteLabel: NSTextField!
+    private var quoteBackground: NSImageView!
+    private var backgroundColor = NSColor.black
+    private var textColor = NSColor.white
+    private var textFont = NSFont.init(name: "Skia", size: 48.0)
+    private var fileName: String = "quotes"
 
-    public var backgroundColor = NSColor.black
-    public var textColor = NSColor.white
-    public var textFont = NSFont.init(name: "Skia", size: 48.0)
-    
-    var quotes: [Quote]?
-    var fileName: String = "quotes"
-    
+    open var quotes: [Quote]?
+
     convenience init() {
         self.init(frame: .zero, isPreview: false)
         quoteLabel = .label(bounds: frame)
+        quoteBackground = .init(frame: frame)
         initialize()
     }
-    
+
     override init!(frame: NSRect, isPreview: Bool) {
         super.init(frame: frame, isPreview: isPreview)
         quoteLabel = .label(bounds: frame)
+        quoteBackground = .init(frame: frame)
         initialize()
     }
-    
+
     required public init?(coder: NSCoder) {
         super.init(coder: coder)
         quoteLabel = .label(bounds: bounds)
+        quoteBackground = .init(frame: frame)
         initialize()
     }
-    
+
     private func initialize() {
         self.quotes = readQuotesArray(fileName: fileName)
-        animationTimeInterval = 6
+        quoteBackground.image = getBackgroundImage()
+        quoteBackground.imageScaling = .scaleAxesIndependently
+        animationTimeInterval = 10
+        addSubview(quoteBackground)
         addSubview(quoteLabel)
     }
 
     override open var configureSheet: NSWindow? {
         return nil
     }
-    
+
     override open var hasConfigureSheet: Bool {
         return false
     }
-    
-    override func animateOneFrame() {
-        if let text = getQuote() {
-            quoteLabel.attributedStringValue = text
-            setNeedsDisplay(frame)
-        }
-    }
 
-    func getQuote() -> NSAttributedString? {
-        if let quote = quotes?.randomElement() {
-            let quoteText = quote.quote ?? "Ooooh - Unavailable Quote!"
-            let quoteAuthor = quote.author ?? "No Author"
-            let fullText = "\(quoteText)"
-            let attributedString = NSMutableAttributedString(string: fullText, attributes: [.font:textFont ?? .systemFont(ofSize: 48.0)])
-            attributedString.setAlignment(.center,
-                                          range:
-                (fullText as NSString).range(of: fullText))
-            return attributedString
+    override func animateOneFrame() {
+        if let quote = getQuote() {
+            let quoteText = (quote.quote ?? "Ooooh - Unavailable Quote!") + "\n\n\t\t\t\t --" + (quote.author ?? "")
+            quoteLabel.setTextWithTypeAnimation(typedText: quoteText)
+        }
+        setNeedsDisplay(frame)
+    }
+    
+    func getQuote() -> Quote? {
+        return quotes?.randomElement()
+    }
+    
+   func readQuotesArray(fileName: String) -> [Quote]? {
+    if let path = Bundle(for: type(of: self)).url(forResource: fileName, withExtension: "json"),
+        let contents = try? Data.init(contentsOf: path) {
+            let map = JSONDecoder()
+            return try? map.decode([Quote].self, from: contents)
         }
         return nil
     }
     
-    func getTime() -> String {
-        let date = Date()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm:ss"
-        return formatter.string(from: date)
-    }
-    
-   func readQuotesArray(fileName: String) -> [Quote]? {
-        if let path = Bundle(for: type(of: self)).url(forResource: fileName, withExtension: "json"),
-            let contents = try? Data.init(contentsOf: path) {
-            let map = JSONDecoder()
-            return try? map.decode([Quote].self, from: contents)
-        }
+    func getBackgroundImage() -> NSImage? {
+        if let path = Bundle(for: type(of: self)).url(forResource: "quoteBackground", withExtension: "jpg"){
+            return NSImage.init(contentsOf: path)
+        }        
         return nil
     }
 
     override open func draw(_ rect: NSRect) {
         super.draw(rect)
         let labelWidth = rect.size.width - 20
-        let labelHeight = rect.size.height / 4
+        let labelHeight = rect.size.height / 3
         let labelX = rect.maxX - (rect.maxX/2.0) - (labelWidth/2.0)
         let labelY = rect.maxY - (rect.maxY/2.0) - (labelHeight/2.0)
         quoteLabel.frame = CGRect.init(x: labelX,
@@ -101,8 +98,10 @@ class QutoView: ScreenSaverView {
         quoteLabel.textColor = textColor
         quoteLabel.lineBreakMode = .byWordWrapping
         quoteLabel.maximumNumberOfLines = 0
+        quoteLabel.alignment = .center
+        quoteLabel.font = textFont
         backgroundColor.setFill()
+        quoteBackground.frame = rect
         rect.fill()
     }
-
 }

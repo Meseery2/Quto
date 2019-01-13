@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A21CE59C21EA231400B0081A /* NSTextField+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21CE59B21EA231400B0081A /* NSTextField+Animation.swift */; };
+		A21CE5A021EA291700B0081A /* quoteBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A21CE59F21EA291700B0081A /* quoteBackground.jpg */; };
 		A24796B121E2301A00AF5C5C /* NSTextField+Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24796B021E2301A00AF5C5C /* NSTextField+Label.swift */; };
 		A27C71DF21E21EEF005C9B89 /* QutoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27C71DE21E21EEF005C9B89 /* QutoView.swift */; };
 		A27C71E121E2231A005C9B89 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27C71E021E2231A005C9B89 /* Quote.swift */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A21CE59B21EA231400B0081A /* NSTextField+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextField+Animation.swift"; sourceTree = "<group>"; };
+		A21CE59F21EA291700B0081A /* quoteBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = quoteBackground.jpg; sourceTree = "<group>"; };
 		A24796B021E2301A00AF5C5C /* NSTextField+Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextField+Label.swift"; sourceTree = "<group>"; };
 		A27C71DE21E21EEF005C9B89 /* QutoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QutoView.swift; sourceTree = "<group>"; };
 		A27C71E021E2231A005C9B89 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
@@ -53,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				A24796B021E2301A00AF5C5C /* NSTextField+Label.swift */,
+				A21CE59B21EA231400B0081A /* NSTextField+Animation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -60,6 +65,7 @@
 		A24796B521E2A86800AF5C5C /* Files */ = {
 			isa = PBXGroup;
 			children = (
+				A21CE59F21EA291700B0081A /* quoteBackground.jpg */,
 				A27C71E221E223BA005C9B89 /* quotes.json */,
 			);
 			path = Files;
@@ -161,6 +167,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A21CE5A021EA291700B0081A /* quoteBackground.jpg in Resources */,
 				A27C71E321E223BB005C9B89 /* quotes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,6 +182,7 @@
 				A27C71E121E2231A005C9B89 /* Quote.swift in Sources */,
 				A24796B121E2301A00AF5C5C /* NSTextField+Label.swift in Sources */,
 				A27C71DF21E21EEF005C9B89 /* QutoView.swift in Sources */,
+				A21CE59C21EA231400B0081A /* NSTextField+Animation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

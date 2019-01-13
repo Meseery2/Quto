@@ -12,8 +12,6 @@
     {
         "quote":"You miss 100% of the shots you don’t take.","author":"Wayne Gretzky"},
     {
-        "quote":"I’ve missed more than 9000 shots in my career. I’ve lost almost 300 games. 26 times I’ve been trusted to take the game winning shot and missed. I’ve failed over and over and over again in my life. And that is why I succeed.","author":"Michael Jordan"},
-    {
         "quote":"The most difficult thing is the decision to act, the rest is merely tenacity.","author":"Amelia Earhart"},
     {
         "quote":"Every strike brings me closer to the next home run.","author":"Babe Ruth"},
@@ -25,8 +23,6 @@
         "quote":"Life is what happens to you while you’re busy making other plans.","author":"John Lennon"},
     {
         "quote":"We become what we think about.","author":"Earl Nightingale"},
-    {
-        "quote":"Twenty years from now you will be more disappointed by the things that you didn’t do than by the ones you did do, so throw off the bowlines, sail away from safe harbor, catch the trade winds in your sails.  Explore, Dream, Discover.","author":"Mark Twain"},
     {
         "quote":"Life is 10% what happens to me and 90% of how I react to it.","author":"Charles Swindoll"},
     {
@@ -76,8 +72,6 @@
     {
         "quote":"Go confidently in the direction of your dreams.  Live the life you have imagined.","author":"Henry David Thoreau"},
     {
-        "quote":"When I stand before God at the end of my life, I would hope that I would not have a single bit of talent left and could say, I used everything you gave me.","author":"Erma Bombeck"},
-    {
         "quote":"Few things can help an individual more than to place responsibility on him, and to let him know that you trust him.","author":"Booker T. Washington"},
     {
         "quote":"Certain things catch your eye, but pursue only those that capture the heart.","author":" Ancient Indian Proverb"},
@@ -92,11 +86,7 @@
     {
         "quote":"Start where you are. Use what you have.  Do what you can.","author":"Arthur Ashe"},
     {
-        "quote":"When I was 5 years old, my mother always told me that happiness was the key to life.  When I went to school, they asked me what I wanted to be when I grew up.  I wrote down ‘happy’.  They told me I didn’t understand the assignment, and I told them they didn’t understand life.","author":"John Lennon"},
-    {
         "quote":"Fall seven times and stand up eight.","author":"Japanese Proverb"},
-    {
-        "quote":"When one door of happiness closes, another opens, but often we look so long at the closed door that we do not see the one that has been opened for us.","author":"Helen Keller"},
     {
         "quote":"Everything has beauty, but not everyone can see.","author":"Confucius"},
     {
@@ -109,8 +99,6 @@
         "quote":"Happiness is not something readymade.  It comes from your own actions.","author":"Dalai Lama"},
     {
         "quote":"If you’re offered a seat on a rocket ship, don’t ask what seat! Just get on.","author":"Sheryl Sandberg"},
-    {
-        "quote":"First, have a definite, clear practical ideal; a goal, an objective. Second, have the necessary means to achieve your ends; wisdom, money, materials, and methods. Third, adjust all your means to that end.","author":"Aristotle"},
     {
         "quote":"If the wind will not serve, take to the oars.","author":"Latin Proverb"},
     {
@@ -149,8 +137,6 @@
         "quote":"I would rather die of passion than of boredom.","author":"Vincent van Gogh"},
     {
         "quote":"A truly rich man is one whose children run into his arms when his hands are empty.","author":"Unknown"},
-    {
-        "quote":"It is not what you do for your children, but what you have taught them to do for themselves, that will make them successful human beings.","author":"Ann Landers"},
     {
         "quote":"If you want your children to turn out well, spend twice as much time with them, and half as much money.","author":"Abigail Van Buren"},
     {
@@ -202,7 +188,111 @@
     {
         "quote":"The only way to do great work is to love what you do.","author":"Steve Jobs"},
     {
-        "quote":"If you can dream it, you can achieve it.","author":"Zig Ziglar"}
+        "quote":"If you can dream it, you can achieve it.","author":"Zig Ziglar"},
+    {
+        "quote": "You can’t have great software without a great team...",
+        "author": "Jim McCarthy"
+    },
+    {
+        "quote": "The most important single aspect of software development is to be clear about what you are trying to build.",
+        "author": "Bjarne Stroustrup"
+    },
+    {
+        "quote": "First, solve the problem. Then, write the code.",
+        "author": "John Johnson"
+    },
+    {
+        "quote": "Correctness is clearly the prime quality. If a system does not do what it is supposed to do, then everything else about it matters little.",
+        "author": "Bertrand Meyer"
+    },
+    {
+        "quote": "Simplicity is prerequisite for reliability.",
+        "author": "Edsger W. Dijkstra"
+    },
+    {
+        "quote": "You start with a small trivial project, and you should never expect it to get large.",
+        "author": "Linus Torvalds"
+    },
+    {
+        "quote": "You need to get something half-way useful first, and then others will say “hey, that almost works for me”, and they’ll get involved in the project.",
+        "author": "Linus Torvalds"
+    },
+    {
+        "quote": "Want to write fast software? Use an old computer!",
+        "author": "Feross Aboukhadijeh"
+    },
+    {
+        "quote": "You’re bound to be unhappy if you optimize everything.",
+        "author": "Donald Knuth"
+    },
+    {
+        "quote": "Controlling complexity is the essence of computer programming.",
+        "author": "Brian Kernighan"
+    },
+    {
+        "quote": "One of my most productive days was throwing away 1000 lines of code.",
+        "author": "Ken Thompson"
+    },
+    {
+        "quote": "The unavoidable price of reliability is simplicity.",
+        "author": "C.A.R. Hoare"
+    },
+    {
+        "quote": "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.",
+        "author": "Brian W. Kernighan and P. J. Plauger in The Elements of Programming Style"
+    },
+    {
+        "quote": "Even bad code can function. But if the code isn’t clean, it can bring a development organization to its knees.",
+        "author": "Robert C. Martin"
+    },
+    {
+        "quote": "Measuring programming progress by lines of code is like measuring aircraft building progress by weight.",
+        "author": "Bill Gates"
+    },
+    {
+        "quote": "Gear is the ultimate procrastination.",
+        "author": "Mattias P Johansson"
+    },
+    {
+        "quote": "Simplicity is the ultimate sophistication.",
+        "author": "Leonardo da Vinci"
+    },
+    {
+        "quote": "The competent programmer is fully aware of the limited size of his own skull. He therefore approaches his task with full humility, and avoids clever tricks like the plague.",
+        "author": "Edsger W. Dijkstra"
+    },
+    {
+        "quote": "Bad programmers worry about the code. Good programmers worry about data structures and their relationships.",
+        "author": "Linus Torvalds"
+    },
+    {
+        "quote": "Unix is simple. It just takes a genius to understand its simplicity.",
+        "author": "Dennis Ritchie"
+    },
+    {
+        "quote": "Incorrect documentation is often worse than no documentation.",
+        "author": "Bertrand Meyers"
+    },
+    {
+        "quote": "Code never lies, comments sometimes do.",
+        "author": "Ron Jeffries"
+    },
+    {
+        "quote": "Software is like sex: it's better when it's free.",
+        "author": "Linus Torvalds"
+    },
+    {
+        "quote": "The biggest risk you can take is not taking any risk.",
+        "author": "Mark Zuckerberg"
+    },
+    {
+        "quote": "JavaScript, being a loosely typed language, never casts. The lineage of an object is irrelevant. What matters about an object is what it can do, not what it is descended from.",
+        "author": "Douglas Crockford"
+    },
+    {
+        "quote": "The problem with object-oriented languages is they’ve got all this implicit environment that they carry around with them. You wanted a banana but what you got was a gorilla holding the banana and the entire jungle.",
+        "author": "Joe Armstrong, The Gorilla Banana Problem"
+    }
 ]
 
 
