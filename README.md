@@ -7,7 +7,7 @@ Quto is a simple screensaver for MacOS that stream a group of quotes with a Type
 ## Install (Mac OSX only)
 
 * Download [Quto.saver](https://github.com/Meseery2/Quto/releases/download/v0.0.1/Quto.saver.zip)
-* Or, Fork or clone this project, then double click the file `Quto.saver` in the project folder.
+* Or, fork/clone this project, then double click the file `Quto.saver` in the project folder.
 * Open the Mac OSX preferences, choose Screensaver and activate `Quto`
 
 ## Uninstall
