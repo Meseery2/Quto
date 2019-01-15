@@ -8,45 +8,55 @@
 
 import Foundation
 import ScreenSaver
+import AVKit
 
 class QutoView: ScreenSaverView {
     private var quoteLabel: NSTextField!
-    private var quoteBackground: NSImageView!
-    private var backgroundColor = NSColor.black
+    private var videoPlayer: AVPlayerView!
+    private var player: AVPlayer!
     private var textColor = NSColor.white
     private var textFont = NSFont.init(name: "Skia", size: 48.0)
-    private var fileName: String = "quotes"
-
+    private var jsonFileName: String = "quotes"
+    private var videoFileName: String = "Traffic"
     open var quotes: [Quote]?
 
     convenience init() {
         self.init(frame: .zero, isPreview: false)
-        quoteLabel = .label(bounds: frame)
-        quoteBackground = .init(frame: frame)
         initialize()
     }
 
     override init!(frame: NSRect, isPreview: Bool) {
         super.init(frame: frame, isPreview: isPreview)
-        quoteLabel = .label(bounds: frame)
-        quoteBackground = .init(frame: frame)
         initialize()
     }
 
     required public init?(coder: NSCoder) {
         super.init(coder: coder)
-        quoteLabel = .label(bounds: bounds)
-        quoteBackground = .init(frame: frame)
         initialize()
     }
 
     private func initialize() {
-        self.quotes = readQuotesArray(fileName: fileName)
-        quoteBackground.image = getBackgroundImage()
-        quoteBackground.imageScaling = .scaleAxesIndependently
         animationTimeInterval = 10
-        addSubview(quoteBackground)
+        quotes = readQuotesArray(fileName: jsonFileName)
+        quoteLabel = .label(bounds: bounds)
+        videoPlayer = .init(frame: frame)
+        setupVideoPlayer()
+        addSubview(videoPlayer)
         addSubview(quoteLabel)
+    }
+    
+    private func setupVideoPlayer() {
+        if let path = Bundle(for: type(of: self)).url(forResource: videoFileName, withExtension: "mp4"){
+            let asset = AVURLAsset(url: path)
+            let playerItem = AVPlayerItem(asset: asset)
+            player = AVPlayer(playerItem: playerItem)
+            videoPlayer?.player = player
+            videoPlayer.controlsStyle = .none
+            NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil, queue: nil) { [weak self] notification in
+                self?.player.seek(to: CMTime.zero)
+                self?.player.play()
+            }
+        }
     }
 
     override open var configureSheet: NSWindow? {
@@ -62,6 +72,7 @@ class QutoView: ScreenSaverView {
             let quoteText = (quote.quote ?? "Ooooh - Unavailable Quote!") + "\n\n\t\t\t\t --" + (quote.author ?? "")
             quoteLabel.setTextWithTypeAnimation(typedText: quoteText)
         }
+        videoPlayer.player?.play()
         setNeedsDisplay(frame)
     }
     
@@ -78,13 +89,6 @@ class QutoView: ScreenSaverView {
         return nil
     }
     
-    func getBackgroundImage() -> NSImage? {
-        if let path = Bundle(for: type(of: self)).url(forResource: "quoteBackground", withExtension: "jpg"){
-            return NSImage.init(contentsOf: path)
-        }        
-        return nil
-    }
-
     override open func draw(_ rect: NSRect) {
         super.draw(rect)
         let labelWidth = rect.size.width - 20
@@ -100,8 +104,6 @@ class QutoView: ScreenSaverView {
         quoteLabel.maximumNumberOfLines = 0
         quoteLabel.alignment = .center
         quoteLabel.font = textFont
-        backgroundColor.setFill()
-        quoteBackground.frame = rect
         rect.fill()
     }
 }
