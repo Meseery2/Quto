@@ -3,6 +3,7 @@ Quto Sceensaver
 
 Quto is a simple screensaver for MacOS that stream a group of quotes with a Typewriting effect. 
 
+![Quto Screensaver](Sample.gif)
 
 ## Install (Mac OSX only)
 
